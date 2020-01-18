@@ -50,7 +50,6 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
-            Debug.Log("Jumped");
             rb.AddForce((transform.TransformDirection(Vector3.forward) + Vector3.up) * jumpStrength);
         }
     }

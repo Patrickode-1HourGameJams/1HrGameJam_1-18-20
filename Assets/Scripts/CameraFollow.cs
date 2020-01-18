@@ -17,9 +17,12 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        playerPos = player.transform.position;
+        if (player)
+        {
+            playerPos = player.transform.position;
 
-        transform.position = new Vector3(playerPos.x, playerPos.y + camOffset.y, playerPos.z + camOffset.z);
-        transform.LookAt(player.transform);
+            transform.position = new Vector3(playerPos.x, playerPos.y + camOffset.y, playerPos.z + camOffset.z);
+            transform.LookAt(player.transform);
+        }
     }
 }
