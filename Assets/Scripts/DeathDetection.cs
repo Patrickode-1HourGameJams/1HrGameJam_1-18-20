@@ -6,12 +6,14 @@ public class DeathDetection : MonoBehaviour
 {
     public GameObject player;
     public GameObject deathPlane;
+    public AudioSource audioSource;
 
     void Update()
     {
-        if (player.transform.position.y <= deathPlane.transform.position.y)
+        if (player && player.transform.position.y <= deathPlane.transform.position.y)
         {
             Destroy(player);
+            audioSource.Play();
         }
     }
 }
